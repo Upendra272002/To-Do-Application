@@ -1,0 +1,232 @@
+body {
+    background-color: #cce7f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.task-manager {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-y: auto; 
+    max-height: 90vh; 
+}
+
+h1 {
+    font-family: "Roboto";
+    background-color: white;   
+}
+h2 {
+    font-family: "Roboto";
+    text-align: left;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.task-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#task-input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#add-button {
+    height: 35px;
+    width: 60px;
+    padding: 0;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    border-radius: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#add-button:active{
+    transform: scale(0.95);
+}
+
+#todo-container {
+    margin-top: 10px;
+    max-height: 50vh;
+    overflow-y: auto; 
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(232, 232, 236);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.label-container label {
+    margin-left: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: calc(100% - 30%); /* Prevents text from pushing the button */
+}
+
+.label-container button {
+    width: 70px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.label-container button:active {
+    transform: scale(0.95);
+}
+
+.checked {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/*For checkbox to appear Blue*/
+input[type="checkbox"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.save-button{
+    height: 30px;
+    width: 65px;
+    color: white;
+    background-color: #007bff;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.save-button:active{
+    transform: scale(0.95);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 350px) {
+    .task-manager {
+        width: 80%;
+        padding: 10px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    #todo-container {
+        width: 100%;
+    }
+    #task-input {
+        width: 75%;
+        height: 10px;
+        font-size: 13px;
+    }
+    #add-button {
+        width: 50px;
+        height: 30px;
+        font-size: 13px;
+    }
+    .label-container button {
+        width: 40px;
+        height: 20px;
+        font-size: 10px;
+        font-weight: 550;
+    }
+    .save-button{
+        width: 60px;
+        height: 25px;
+        font-size: 85%;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 600px) {
+    .task-manager {
+        width: 70%;
+        padding: 20px;
+    }
+    #todo-container {
+        width: 100%;
+    }
+    #add-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .label-container button {
+        width: 60px;  
+        height: 28px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .task-manager {
+        width: 50%;
+        max-width: 600px; 
+    }
+    #todo-container {
+        width: 100%;
+    }
+    .label-container button {
+        width: 60px;  
+        height: 30px;
+    }
+}
